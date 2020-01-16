@@ -11,9 +11,15 @@ class OmikujiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
         // 文字を表示する
-        val str = "大吉"
+        var str = "大吉"
         val rnd = Random()
         val number = rnd.nextInt(3)
-        hello_view.text = "$str 乱数 ${number + 1}"
+        if ( number == 0) {
+            str = "吉"
+        }
+        else if ( number == 1) {
+            str = "凶"
+        }
+        hello_view.text = str
     }
 }
