@@ -18,7 +18,7 @@ class OmikujiActivity : AppCompatActivity() {
             str = "吉"
         }
         else if ( number == 1) {
-            str = "凶"
+            str = "小室"
         }
         hello_view.text = str
     }
