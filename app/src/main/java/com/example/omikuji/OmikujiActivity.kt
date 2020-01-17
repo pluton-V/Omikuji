@@ -2,6 +2,7 @@ package com.example.omikuji
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.omikuji.R.layout.omikuji
 import kotlinx.android.synthetic.main.main.*
 import java.util.*
 
@@ -9,8 +10,8 @@ class OmikujiActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.omikuji)
-
+        setContentView(omikuji)
+/*
         // くじ番号の取得
         val rnd = Random()
         val number = rnd.nextInt(20)
@@ -24,5 +25,7 @@ class OmikujiActivity : AppCompatActivity() {
         val str = omikujiShelf[number]
 
         hello_view.text = str
+
+*/
     }
 }
