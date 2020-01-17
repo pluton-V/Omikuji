@@ -9,7 +9,7 @@ class OmikujiActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main)
+        setContentView(R.layout.omikuji)
 
         // くじ番号の取得
         val rnd = Random()
