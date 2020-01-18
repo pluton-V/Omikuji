@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.omikuji.R.layout.omikuji
 import kotlinx.android.synthetic.main.main.*
+import kotlinx.android.synthetic.main.omikuji.*
 import java.util.*
 
 class OmikujiActivity : AppCompatActivity() {
@@ -11,6 +12,8 @@ class OmikujiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.omikuji)
+
+        imageView.setImageResource(R.drawable.result1)
 /*
         // くじ番号の取得
         val rnd = Random()
