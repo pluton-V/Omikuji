@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
+import android.view.animation.AnimationSet
+import android.view.animation.RotateAnimation
 import android.view.animation.TranslateAnimation
 import com.example.omikuji.R.layout.omikuji
 import kotlinx.android.synthetic.main.main.*
@@ -39,7 +41,15 @@ class OmikujiActivity : AppCompatActivity() {
         translate.repeatMode = Animation.REVERSE
         translate.repeatCount = 5
         translate.duration = 100
-        imageView.startAnimation(translate)
+
+        val rotate = RotateAnimation(0f, -36f, imageView.width/2f, imageView.height/2f)
+        rotate.duration = 200
+
+        val set = AnimationSet(true)
+        set.addAnimation(rotate)
+        set.addAnimation(translate)
+
+        imageView.startAnimation(set)
 
         // imageView.setImageResource(R.drawable.result1)
     }
