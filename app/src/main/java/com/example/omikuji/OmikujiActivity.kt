@@ -3,6 +3,8 @@ package com.example.omikuji
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.TranslateAnimation
 import com.example.omikuji.R.layout.omikuji
 import kotlinx.android.synthetic.main.main.*
 import kotlinx.android.synthetic.main.omikuji.*
@@ -19,12 +21,12 @@ class OmikujiActivity : AppCompatActivity() {
         val rnd = Random()
         val number = rnd.nextInt(20)
 
-        //おみくじ棚の準備
+        // おみくじ棚の準備
         val omikujiShelf = Array<String>(20, { "吉" })
         omikujiShelf[0] = "大吉"
         omikujiShelf[19] = "凶"
 
-        //おみくじ棚から取得
+        // おみくじ棚から取得
         val str = omikujiShelf[number]
 
         hello_view.text = str
@@ -33,6 +35,12 @@ class OmikujiActivity : AppCompatActivity() {
     }
 
     fun onButtonClick(v:View) {
-        imageView.setImageResource(R.drawable.result1)
+        val translate = TranslateAnimation(0f, 0f, 0f, -200f)
+        translate.repeatMode = Animation.REVERSE
+        translate.repeatCount = 5
+        translate.duration = 100
+        imageView.startAnimation(translate)
+
+        // imageView.setImageResource(R.drawable.result1)
     }
 }
