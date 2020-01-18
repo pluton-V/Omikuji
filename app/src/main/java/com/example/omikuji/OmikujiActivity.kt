@@ -2,6 +2,7 @@ package com.example.omikuji
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.omikuji.R.layout.omikuji
 import kotlinx.android.synthetic.main.main.*
 import kotlinx.android.synthetic.main.omikuji.*
@@ -13,7 +14,6 @@ class OmikujiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.omikuji)
 
-        imageView.setImageResource(R.drawable.result1)
 /*
         // くじ番号の取得
         val rnd = Random()
@@ -30,5 +30,9 @@ class OmikujiActivity : AppCompatActivity() {
         hello_view.text = str
 
 */
+    }
+
+    fun onButtonClick(v:View) {
+        imageView.setImageResource(R.drawable.result1)
     }
 }
