@@ -7,7 +7,17 @@ import android.view.animation.TranslateAnimation
 import android.widget.ImageView
 import java.util.*
 
-class OmikujiBox {
+class OmikujiBox: Animation.AnimationListener {
+    override fun onAnimationRepeat(animation: Animation?) {
+    }
+
+    override fun onAnimationEnd(animation: Animation?) {
+        omikujiView.setImageResource(R.drawable.omikuji2)
+    }
+
+    override fun onAnimationStart(animation: Animation?) {
+    }
+
     lateinit var omikujiView: ImageView
     var finish = false // 箱から出たか？
 
@@ -29,6 +39,8 @@ class OmikujiBox {
         val set = AnimationSet(true)
         set.addAnimation(rotate)
         set.addAnimation(translate)
+
+        set.setAnimationListener(this)
 
         omikujiView.startAnimation(set)
 
