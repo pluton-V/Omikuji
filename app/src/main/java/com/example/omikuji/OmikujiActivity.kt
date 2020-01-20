@@ -3,6 +3,7 @@ package com.example.omikuji
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.fortune.*
 import kotlinx.android.synthetic.main.omikuji.*
 
 class OmikujiActivity : AppCompatActivity() {
@@ -73,5 +74,21 @@ class OmikujiActivity : AppCompatActivity() {
          */
 
         // imageView.setImageResource(R.drawable.result1)
+    }
+
+    fun drawResult() {
+        
+        // おみくじ番号を取得する
+        omikujiNumber = omikujiBox.number
+
+        // おみくじ棚の配列から、omikujiPartsを取得する
+        val op = omikujiShelf[omikujiNumvber]
+
+        // レイアウトを運勢表示に変更する
+        setContentView(R.layout.fortune)
+
+        // 画像とテキストを変更する
+        imageView2.setImageResource(op.drawID)
+        textView.setText(op.fortuneID)
     }
 }
