@@ -22,6 +22,18 @@ class OmikujiActivity : AppCompatActivity() {
 
         omikujiBox.omikujiView = imageView
 
+        //おみくじ棚の準備
+        omikujiShelf[0].drawID = R.drawable.result1
+        omikujiShelf[0].fortuneID = R.string.contents2
+
+        omikujiShelf[1].drawID = R.drawable.result3
+        omikujiShelf[1].fortuneID = R.string.contents9
+
+        omikujiShelf[2].fortuneID = R.string.contents3
+        omikujiShelf[3].fortuneID = R.string.contents4
+        omikujiShelf[4].fortuneID = R.string.contents5
+        omikujiShelf[5].fortuneID = R.string.contents6
+
 /*
         // くじ番号の取得
         val rnd = Random()
