@@ -7,6 +7,13 @@ import kotlinx.android.synthetic.main.omikuji.*
 
 class OmikujiActivity : AppCompatActivity() {
 
+    // おみくじ棚の配列
+    val omikujiShelf = Array<OmikujiParts>(20)
+    { OmikujiParts(R.drawable.result2, R.string.contents1) }
+
+    // おみくじ番号保管用
+    var omikujiNumber = -1
+
     val omikujiBox = OmikujiBox()
 
     override fun onCreate(savedInstanceState: Bundle?) {
