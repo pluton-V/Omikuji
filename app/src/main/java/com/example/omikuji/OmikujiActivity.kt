@@ -77,12 +77,12 @@ class OmikujiActivity : AppCompatActivity() {
     }
 
     fun drawResult() {
-        
+
         // おみくじ番号を取得する
         omikujiNumber = omikujiBox.number
 
         // おみくじ棚の配列から、omikujiPartsを取得する
-        val op = omikujiShelf[omikujiNumvber]
+        val op = omikujiShelf[omikujiNumber]
 
         // レイアウトを運勢表示に変更する
         setContentView(R.layout.fortune)
