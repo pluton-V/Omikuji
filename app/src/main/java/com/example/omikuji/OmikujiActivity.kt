@@ -1,6 +1,7 @@
 package com.example.omikuji
 
 import android.os.Bundle
+import android.view.Menu
 import android.view.MotionEvent
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -52,6 +53,11 @@ class OmikujiActivity : AppCompatActivity() {
         hello_view.text = str
 
 */
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
 
