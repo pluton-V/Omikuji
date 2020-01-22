@@ -2,6 +2,7 @@ package com.example.omikuji
 
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
@@ -25,6 +26,11 @@ class OmikujiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.omikuji)
+
+        val pref = PreferenceManager.getDefaultSharedPreferences(this)
+        val value = pref.getBoolean("button", false)
+
+        button.visibility = if (value) View.VISIBLE else View.INVISIBLE
 
         omikujiBox.omikujiView = imageView
 
